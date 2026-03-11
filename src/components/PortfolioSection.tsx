@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink } from "lucide-react";
+import hubbleScreenshot from "@/assets/hubble-screenshot.png";
 
 const PortfolioSection = () => {
   const ref = useRef(null);
