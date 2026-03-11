@@ -25,22 +25,29 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/10"
-      style={{ background: "linear-gradient(90deg, #004aad, #cb6ce6)" }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-white/10 ${
+        scrolled ? "shadow-lg" : ""
+      }`}
+      style={{
+        background: scrolled
+          ? "linear-gradient(90deg, #004aad, #cb6ce6)"
+          : "linear-gradient(90deg, rgba(0,74,173,0.75), rgba(203,108,230,0.75))",
+        backdropFilter: scrolled ? "none" : "blur(12px)",
+      }}
     >
-      <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
-        <a href="#hero" className="flex items-center gap-2">
-          <img src={logo} alt="LM Studios" className="h-10 w-10 rounded-full" />
-          <span className="font-heading font-bold text-lg text-foreground">LM Studios</span>
+      <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-6 lg:px-8">
+        <a href="#hero" className="flex items-center gap-3">
+          <img src={logo} alt="LM Studios" className="h-14 w-14 rounded-full" />
+          <span className="font-heading font-bold text-xl text-white">LM Studios</span>
         </a>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-white/75 hover:text-white transition-colors"
             >
               {l.label}
             </a>
@@ -49,32 +56,35 @@ const Navbar = () => {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="gradient-bg text-primary-foreground text-sm font-medium px-5 py-2.5 rounded-lg hover:opacity-90 transition-opacity"
+            className="bg-white/20 backdrop-blur text-white text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-white/30 transition-all border border-white/20"
           >
             Solicitar Orçamento
           </a>
         </div>
 
-        {/* Mobile trigger */}
+        {/* Mobile/Tablet trigger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-foreground p-2"
+          className="lg:hidden text-white p-2"
           aria-label="Menu"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile/Tablet menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-background/98 backdrop-blur-md border-t border-border">
-          <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
+        <div
+          className="lg:hidden border-t border-white/15"
+          style={{ background: "linear-gradient(180deg, rgba(0,74,173,0.95), rgba(203,108,230,0.95))", backdropFilter: "blur(16px)" }}
+        >
+          <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
             {navLinks.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-muted-foreground hover:text-foreground transition-colors py-2"
+                className="text-white/80 hover:text-white transition-colors py-2"
               >
                 {l.label}
               </a>
@@ -83,7 +93,7 @@ const Navbar = () => {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="gradient-bg text-primary-foreground font-medium px-5 py-3 rounded-lg text-center hover:opacity-90 transition-opacity"
+              className="bg-white/20 text-white font-medium px-5 py-3 rounded-lg text-center hover:bg-white/30 transition-all border border-white/20"
             >
               Solicitar Orçamento
             </a>
