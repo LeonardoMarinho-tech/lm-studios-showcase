@@ -29,8 +29,8 @@ const PortfolioSection = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.15 }}
         >
-          <div className="h-56 md:h-64 bg-gradient-to-br from-[#004aad] to-[#cb6ce6] opacity-80 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span className="text-white/70 font-heading text-lg tracking-widest uppercase">Hubble Soluções</span>
+          <div className="h-56 md:h-72 overflow-hidden">
+            <img src={hubbleScreenshot} alt="Hubble Soluções - Website" className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
           </div>
           <div className="p-8">
             <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Soluções Digitais</span>
