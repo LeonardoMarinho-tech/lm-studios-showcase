@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LM Studios | Sites Modernos Que Fazem Seu Negócio Crescer</title>
+  <meta name="description" content="LM Studios — Estúdio de desenvolvimento web focado em criar sites profissionais, modernos e estratégicos para posicionar sua marca no digital." />
+  <meta property="og:title" content="LM Studios | Web Development Studio" />
+  <meta property="og:description" content="Sites modernos que fazem seu negócio crescer. Design premium, código limpo e foco em conversão." />
+  <meta property="og:type" content="website" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <link rel="stylesheet" href="lm-studios.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header id="site-header" class="site-header">
+    <div class="section-container header-inner">
+      <a href="#hero" class="header-brand">
+        <img src="src/assets/logo.png" alt="LM Studios" class="header-logo" />
+        <span class="header-brand-name">LM Studios</span>
+      </a>
+
+      <nav class="header-nav">
+        <a href="#hero" class="nav-link">Início</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#portfolio" class="nav-link">Portfólio</a>
+        <a href="#depoimentos" class="nav-link">Depoimentos</a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://wa.me/5511958585994?text=Olá%2C%20vim%20pelo%20site%20da%20LM%20Studios%20e%20gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="btn-cta-header">
+          Solicitar Orçamento
+        </a>
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Menu">
+          <i data-lucide="menu" style="width:24px;height:24px" id="menu-icon"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu">
+      <nav>
+        <a href="#hero" class="mobile-link">Início</a>
+        <a href="#sobre" class="mobile-link">Sobre</a>
+        <a href="#servicos" class="mobile-link">Serviços</a>
+        <a href="#portfolio" class="mobile-link">Portfólio</a>
+        <a href="#depoimentos" class="mobile-link">Depoimentos</a>
+        <a href="#contato" class="mobile-link">Contato</a>
+        <a href="https://wa.me/5511958585994?text=Olá%2C%20vim%20pelo%20site%20da%20LM%20Studios%20e%20gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="btn-cta-mobile">
+          Solicitar Orçamento
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero" class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-grid"></div>
+
+    <div class="section-container hero-content">
+      <div class="animate-fade-up" style="text-align:center;max-width:56rem;margin:0 auto">
+        <p class="hero-label">Web Development Studio</p>
+        <h1>Sites Modernos Que Fazem</h1>
+        <h1 class="gradient-text">Seu Negócio Crescer</h1>
+        <div class="gradient-line" style="max-width:32rem;margin:2rem auto"></div>
+        <p class="hero-desc">
+          Criamos websites profissionais, estratégicos e focados em conversão
+          para posicionar sua marca no digital com autoridade.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/5511958585994?text=Olá%2C%20vim%20pelo%20site%20da%20LM%20Studios%20e%20gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="btn-primary">
+            Falar no WhatsApp
+            <i data-lucide="arrow-right" style="width:18px;height:18px"></i>
+          </a>
+          <a href="#servicos" class="btn-secondary">
+            Ver Serviços
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SOBRE ===================== -->
+  <section id="sobre" class="section-dark">
+    <div class="section-container">
+      <div class="section-header reveal" style="max-width:48rem;margin-left:auto;margin-right:auto">
+        <span class="section-label">Sobre Nós</span>
+        <h2 class="section-title">Estrutura. Performance. <span class="gradient-text">Presença.</span></h2>
+        <div class="gradient-line" style="max-width:6rem;margin:1.5rem auto"></div>
+        <p class="section-desc">
+          A <strong>LM Studios</strong> é um estúdio de desenvolvimento web focado em
+          criar experiências digitais que geram resultados reais. Combinamos design moderno,
+          código limpo e estratégia de conversão para transformar visitantes em clientes.
+        </p>
+        <p class="section-desc">
+          Cada projeto é único — construído do zero, sem templates genéricos.
+          Nossa missão é posicionar sua marca no digital com autoridade, velocidade e presença profissional.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVIÇOS ===================== -->
+  <section id="servicos" class="section-surface">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-label">Serviços</span>
+        <h2 class="section-title">O Que <span class="gradient-text">Fazemos</span></h2>
+        <div class="gradient-line" style="max-width:6rem;margin:1rem auto"></div>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon"><i data-lucide="globe" style="width:22px;height:22px"></i></div>
+          <h3>Desenvolvimento de Sites Profissionais</h3>
+          <p>Sites modernos, rápidos e otimizados para destacar sua marca no digital.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i data-lucide="layers" style="width:22px;height:22px"></i></div>
+          <h3>Landing Pages</h3>
+          <p>Páginas focadas em conversão com design estratégico e copy persuasivo.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i data-lucide="smartphone" style="width:22px;height:22px"></i></div>
+          <h3>Design Responsivo</h3>
+          <p>Experiência perfeita em qualquer dispositivo — desktop, tablet ou celular.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i data-lucide="refresh-cw" style="width:22px;height:22px"></i></div>
+          <h3>Redesign de Sites</h3>
+          <p>Modernize seu site atual com uma nova identidade visual e melhor performance.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i data-lucide="building-2" style="width:22px;height:22px"></i></div>
+          <h3>Sites Empresariais</h3>
+          <p>Presença digital sólida e profissional para empresas de todos os tamanhos.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon"><i data-lucide="target" style="width:22px;height:22px"></i></div>
+          <h3>Páginas de Conversão</h3>
+          <p>Estrutura estratégica para transformar visitantes em leads e clientes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== POR QUE NOS ESCOLHER ===================== -->
+  <section class="section-dark">
+    <div class="section-container">
+      <div class="why-layout">
+        <div class="why-text reveal">
+          <span class="section-label">Por Que Nos Escolher</span>
+          <h2 class="section-title" style="text-align:left">
+            Estrutura. <span class="gradient-text">Performance.</span><br />Presença.
+          </h2>
+          <div class="gradient-line" style="max-width:6rem;margin-top:1.5rem"></div>
+        </div>
+        <ul class="why-list reveal">
+          <li>
+            <div class="why-icon"><i data-lucide="palette" style="width:18px;height:18px"></i></div>
+            <span>Design moderno e exclusivo</span>
+          </li>
+          <li>
+            <div class="why-icon"><i data-lucide="monitor-smartphone" style="width:18px;height:18px"></i></div>
+            <span>100% responsivo e mobile-friendly</span>
+          </li>
+          <li>
+            <div class="why-icon"><i data-lucide="zap" style="width:18px;height:18px"></i></div>
+            <span>Carregamento ultrarrápido</span>
+          </li>
+          <li>
+            <div class="why-icon"><i data-lucide="shield" style="width:18px;height:18px"></i></div>
+            <span>Estrutura estratégica e segura</span>
+          </li>
+          <li>
+            <div class="why-icon"><i data-lucide="trending-up" style="width:18px;height:18px"></i></div>
+            <span>Foco total em conversão</span>
+          </li>
+          <li>
+            <div class="why-icon"><i data-lucide="bar-chart-3" style="width:18px;height:18px"></i></div>
+            <span>Presença digital profissional</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PORTFÓLIO ===================== -->
+  <section id="portfolio" class="section-surface">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-label">Portfólio</span>
+        <h2 class="section-title">Projeto <span class="gradient-text">Em Destaque</span></h2>
+        <div class="gradient-line" style="max-width:6rem;margin:1rem auto"></div>
+      </div>
+      <div class="portfolio-card reveal">
+        <div class="portfolio-image">
+          <img src="src/assets/hubble-screenshot.png" alt="Hubble Soluções - Website" />
+        </div>
+        <div class="portfolio-info">
+          <span class="portfolio-tag">Soluções Digitais</span>
+          <h3>Hubble Soluções</h3>
+          <p>Website profissional desenvolvido para a Hubble Soluções, com design moderno, responsivo e focado em conversão — transmitindo credibilidade e autoridade digital.</p>
+          <a href="https://hubblesolucoes.com" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width:fit-content">
+            Ver Projeto
+            <i data-lucide="external-link" style="width:16px;height:16px"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DEPOIMENTOS ===================== -->
+  <section id="depoimentos" class="section-dark">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-label">Depoimentos</span>
+        <h2 class="section-title">O Que Nossos <span class="gradient-text">Clientes Dizem</span></h2>
+        <div class="gradient-line" style="max-width:6rem;margin:1rem auto"></div>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+          <div class="stars" id="stars-1"></div>
+          <p class="testimonial-text">"A LM Studios transformou completamente nossa presença digital. O site ficou incrível e nossos leads aumentaram em 300% no primeiro mês."</p>
+          <div class="testimonial-author">
+            <strong>Ricardo Oliveira</strong>
+            <span>CEO — Tech Solutions</span>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="stars" id="stars-2"></div>
+          <p class="testimonial-text">"Profissionalismo do início ao fim. O design é moderno, rápido e nossos clientes elogiam constantemente a experiência no site."</p>
+          <div class="testimonial-author">
+            <strong>Camila Santos</strong>
+            <span>Diretora de Marketing — Bella Moda</span>
+          </div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="stars" id="stars-3"></div>
+          <p class="testimonial-text">"Investir no site foi a melhor decisão para o escritório. A equipe da LM Studios entendeu exatamente o que precisávamos."</p>
+          <div class="testimonial-author">
+            <strong>André Costa</strong>
+            <span>Fundador — Costa Advocacia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTATO ===================== -->
+  <section id="contato" class="section-surface">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <span class="section-label">Contato</span>
+        <h2 class="section-title">Vamos <span class="gradient-text">Conversar</span></h2>
+        <div class="gradient-line" style="max-width:6rem;margin:1rem auto"></div>
+      </div>
+      <form id="contact-form" class="contact-form reveal">
+        <div id="form-success" class="form-success" style="display:none">
+          <i data-lucide="check-circle" style="width:20px;height:20px" class="icon-accent"></i>
+          <p>Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <input id="cf-name" name="name" type="text" placeholder="Nome completo" required maxlength="100" />
+            <span class="form-error" id="err-name"></span>
+          </div>
+          <div class="form-group">
+            <input id="cf-phone" name="phone" type="tel" placeholder="WhatsApp" required maxlength="20" />
+            <span class="form-error" id="err-phone"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <input id="cf-email" name="email" type="email" placeholder="E-mail" required maxlength="255" />
+            <span class="form-error" id="err-email"></span>
+          </div>
+          <div class="form-group">
+            <input id="cf-company" name="company" type="text" placeholder="Nome da empresa (opcional)" maxlength="100" />
+          </div>
+        </div>
+        <div class="form-group">
+          <select id="cf-service" name="service">
+            <option value="">Qual serviço você precisa?</option>
+            <option>Desenvolvimento de Site</option>
+            <option>Landing Page</option>
+            <option>Redesign de Site</option>
+            <option>Site Empresarial</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea id="cf-message" name="message" rows="4" placeholder="Sua mensagem" required maxlength="1000"></textarea>
+          <span class="form-error" id="err-message"></span>
+        </div>
+        <button type="submit" class="btn-submit">
+          Enviar Mensagem
+          <i data-lucide="send" style="width:18px;height:18px"></i>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="section-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-logo">
+            <img src="src/assets/logo.png" alt="LM Studios" class="footer-logo-img" />
+            <span>LM Studios</span>
+          </div>
+          <p>Estúdio de desenvolvimento web focado em criar experiências digitais que geram resultados reais para o seu negócio.</p>
+        </div>
+        <div class="footer-nav">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#hero">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contato</h4>
+          <div class="footer-socials">
+            <a href="https://wa.me/5511958585994?text=Olá%2C%20vim%20pelo%20site%20da%20LM%20Studios%20e%20gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
+              <i data-lucide="message-circle" style="width:18px;height:18px"></i>
+            </a>
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <i data-lucide="instagram" style="width:18px;height:18px"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="gradient-line" style="margin-bottom:2rem"></div>
+      <p class="footer-copy">© <span id="year"></span> LM Studios. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING WHATSAPP ===================== -->
+  <a href="https://wa.me/5511958585994?text=Olá%2C%20vim%20pelo%20site%20da%20LM%20Studios%20e%20gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener noreferrer" class="float-wa" aria-label="Fale pelo WhatsApp">
+    <span class="pulse"></span>
+    <span class="icon-wrap">
+      <i data-lucide="message-circle" style="width:28px;height:28px"></i>
+    </span>
+  </a>
+
+  <script src="lm-studios.js"></script>
+</body>
+</html>
