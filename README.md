@@ -1,73 +1,70 @@
-# Welcome to your Lovable project
+# LM Studios — Site Institucional
 
-## Project info
+Site institucional one-page da **LM Studios**, um estúdio de desenvolvimento web. O projeto está em produção em [lmstudios.netlify.app](https://lmstudios.netlify.app/).
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Stack
 
-## How can I edit this code?
+- [Vite](https://vitejs.dev/)
+- [React 18](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/) para animações
+- [React Router](https://reactrouter.com/) para roteamento
+- [Vitest](https://vitest.dev/) + [Testing Library](https://testing-library.com/) para testes
 
-There are several ways of editing your application.
+## Estrutura da página
 
-**Use Lovable**
+A página inicial (`src/pages/Index.tsx`) é composta pelas seguintes seções, renderizadas em ordem:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+1. **Navbar** — navegação fixa no topo
+2. **Hero** — chamada principal
+3. **About** — sobre o estúdio
+4. **Services** — serviços oferecidos
+5. **Why Choose** — diferenciais
+6. **Portfolio** — trabalhos realizados
+7. **Testimonials** — depoimentos de clientes
+8. **Contact** — formulário/informações de contato
+9. **Footer** — rodapé
+10. **WhatsApp Button** — botão flutuante de contato via WhatsApp
 
-Changes made via Lovable will be committed automatically to this repo.
+Uma rota `*` (`src/pages/NotFound.tsx`) trata caminhos não encontrados.
 
-**Use your preferred IDE**
+## Como rodar localmente
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Pré-requisito: Node.js e npm instalados.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
+# Instalar as dependências
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Iniciar o servidor de desenvolvimento (http://localhost:8080)
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Como buildar
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```sh
+npm run build
+```
 
-**Use GitHub Codespaces**
+O resultado é gerado na pasta `dist/`. Para pré-visualizar o build de produção localmente, use `npm run preview`.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Como testar
 
-## What technologies are used for this project?
+```sh
+npm run test
+```
 
-This project is built with:
+Também é possível rodar os testes em modo watch com `npm run test:watch`, e checar lint com `npm run lint`.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Estrutura de pastas (resumida)
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```
+src/
+├── assets/         # imagens e outros arquivos estáticos usados pelos componentes
+├── components/     # componentes da página (Navbar, HeroSection, Footer, etc.)
+├── pages/          # páginas roteadas (Index, NotFound)
+├── test/           # setup e testes automatizados
+├── App.tsx         # definição das rotas (BrowserRouter)
+├── main.tsx        # ponto de entrada da aplicação
+└── index.css       # estilos globais e variáveis de tema (Tailwind)
+```
