@@ -1,7 +1,6 @@
 import logo from "@/assets/logo.png";
 import { Instagram, MessageCircle } from "lucide-react";
-
-const WHATSAPP_URL = "https://wa.me/5511958585994?text=Olá%2C%20vim%20pelo%20site%20da%20LM%20Studios%20e%20gostaria%20de%20solicitar%20um%20orçamento.";
+import { WHATSAPP_URL, INSTAGRAM_URL } from "@/lib/site";
 
 const Footer = () => (
   <footer className="border-t border-border py-16">
@@ -36,7 +35,7 @@ const Footer = () => (
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
               <MessageCircle size={18} />
             </a>
-            <a href="https://www.instagram.com/lmstudios.dev/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary/20 transition-colors">
               <Instagram size={18} />
             </a>
           </div>

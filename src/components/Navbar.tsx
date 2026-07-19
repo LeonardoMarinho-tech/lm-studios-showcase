@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { WHATSAPP_URL } from "@/lib/site";
 
 const navLinks = [
   { label: "Início", href: "#hero" },
@@ -10,8 +11,6 @@ const navLinks = [
   { label: "Depoimentos", href: "#depoimentos" },
   { label: "Contato", href: "#contato" },
 ];
-
-const WHATSAPP_URL = "https://wa.me/5511958585994?text=Olá%2C%20vim%20pelo%20site%20da%20LM%20Studios%20e%20gostaria%20de%20solicitar%20um%20orçamento.";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
