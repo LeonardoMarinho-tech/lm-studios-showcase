@@ -1,4 +1,4 @@
-import hubbleScreenshot from "@/assets/hubble-screenshot.png";
+import hubbleScreenshot from "@/assets/hubble-screenshot.jpg";
 import hubImobHero from "@/assets/hub-imob-hero.png";
 import studioImobiliarioLogo from "@/assets/studio-imobiliario-logo.png";
 
