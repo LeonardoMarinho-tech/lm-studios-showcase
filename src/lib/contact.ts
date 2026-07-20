@@ -1,11 +1,8 @@
 // Envio do formulário de contato via FormSubmit (https://formsubmit.co).
 //
-// O e-mail de destino fica apenas aqui no código e nunca é renderizado na UI.
-// Melhoria futura: depois de ativar o endpoint (primeiro envio confirmado por
-// e-mail), trocar o endereço abaixo pelo hash de privacidade fornecido pelo
-// FormSubmit (https://formsubmit.co/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx) para
-// não expor o e-mail em nenhum lugar, nem no bundle.
-const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/leo.messiasmarinho@gmail.com";
+// O destino usa o hash de privacidade do FormSubmit (endpoint já ativado),
+// então o e-mail real não aparece em lugar nenhum — nem no bundle.
+const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/a825d19dff4afd4ec03b019c6b71272b";
 
 export interface ContactFormData {
   name: string;
