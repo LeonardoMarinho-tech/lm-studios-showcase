@@ -4,43 +4,9 @@ import type { ChangeEvent, FocusEvent, FormEvent } from "react";
 import { Send, CheckCircle, AlertCircle, MessageCircle, Loader2 } from "lucide-react";
 import { WHATSAPP_URL } from "@/lib/site";
 import { sendContactMessage } from "@/lib/contact";
+import { FIELD_NAMES, validateField, type FieldName } from "@/lib/contact-validation";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
-
-type FieldName = "name" | "email" | "phone" | "message";
-
-const FIELD_NAMES: FieldName[] = ["name", "email", "phone", "message"];
-
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PHONE_FORMAT_REGEX = /^[\d\s()+-]{10,20}$/;
-
-const validateField = (name: FieldName, rawValue: string): string => {
-  const value = rawValue.trim();
-
-  switch (name) {
-    case "name":
-      if (!value) return "Nome é obrigatório";
-      if (value.length < 3) return "Informe um nome com pelo menos 3 caracteres";
-      return "";
-    case "email":
-      if (!value) return "E-mail é obrigatório";
-      if (!EMAIL_REGEX.test(value)) return "E-mail inválido";
-      return "";
-    case "phone": {
-      if (!value) return "WhatsApp é obrigatório";
-      if (!PHONE_FORMAT_REGEX.test(value)) return "Informe um telefone válido";
-      const digits = value.replace(/\D/g, "");
-      if (digits.length < 10 || digits.length > 13) return "Informe um WhatsApp válido com DDD";
-      return "";
-    }
-    case "message":
-      if (!value) return "Mensagem é obrigatória";
-      if (value.length < 10) return "Conte um pouco mais (mínimo de 10 caracteres)";
-      return "";
-    default:
-      return "";
-  }
-};
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -194,14 +160,18 @@ const ContactSection = () => {
             />
 
             {status === "success" && (
-              <div className="mb-6 flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-lg p-4">
+              <div
+                role="status"
+                aria-live="polite"
+                className="mb-6 flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-lg p-4"
+              >
                 <CheckCircle size={20} className="text-accent flex-shrink-0" />
                 <p className="text-sm text-foreground">Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
               </div>
             )}
 
             {status === "error" && (
-              <div className="mb-6 flex items-center gap-3 bg-destructive/10 border border-destructive/20 rounded-lg p-4">
+              <div role="alert" className="mb-6 flex items-center gap-3 bg-destructive/10 border border-destructive/20 rounded-lg p-4">
                 <AlertCircle size={20} className="text-destructive flex-shrink-0" />
                 <p className="text-sm text-foreground">
                   Não foi possível enviar sua mensagem. Tente novamente ou{" "}
@@ -218,25 +188,39 @@ const ContactSection = () => {
                 <input
                   name="name"
                   placeholder="Nome completo"
+                  aria-label="Nome completo"
+                  aria-invalid={Boolean(errors.name)}
+                  aria-describedby={errors.name ? "contact-error-name" : undefined}
                   className={inputClass}
                   maxLength={100}
                   onBlur={handleBlur}
                   onChange={handleChange}
                   disabled={sending}
                 />
-                {errors.name && <p className="text-destructive text-xs mt-1">{errors.name}</p>}
+                {errors.name && (
+                  <p id="contact-error-name" className="text-destructive text-xs mt-1">
+                    {errors.name}
+                  </p>
+                )}
               </div>
               <div>
                 <input
                   name="phone"
                   placeholder="WhatsApp"
+                  aria-label="WhatsApp"
+                  aria-invalid={Boolean(errors.phone)}
+                  aria-describedby={errors.phone ? "contact-error-phone" : undefined}
                   className={inputClass}
                   maxLength={20}
                   onBlur={handleBlur}
                   onChange={handleChange}
                   disabled={sending}
                 />
-                {errors.phone && <p className="text-destructive text-xs mt-1">{errors.phone}</p>}
+                {errors.phone && (
+                  <p id="contact-error-phone" className="text-destructive text-xs mt-1">
+                    {errors.phone}
+                  </p>
+                )}
               </div>
             </div>
             <div className="grid md:grid-cols-2 gap-4 mb-4">
@@ -245,17 +229,36 @@ const ContactSection = () => {
                   name="email"
                   type="email"
                   placeholder="E-mail"
+                  aria-label="E-mail"
+                  aria-invalid={Boolean(errors.email)}
+                  aria-describedby={errors.email ? "contact-error-email" : undefined}
                   className={inputClass}
                   maxLength={255}
                   onBlur={handleBlur}
                   onChange={handleChange}
                   disabled={sending}
                 />
-                {errors.email && <p className="text-destructive text-xs mt-1">{errors.email}</p>}
+                {errors.email && (
+                  <p id="contact-error-email" className="text-destructive text-xs mt-1">
+                    {errors.email}
+                  </p>
+                )}
               </div>
-              <input name="company" placeholder="Nome da empresa (opcional)" className={inputClass} maxLength={100} disabled={sending} />
+              <input
+                name="company"
+                placeholder="Nome da empresa (opcional)"
+                aria-label="Nome da empresa (opcional)"
+                className={inputClass}
+                maxLength={100}
+                disabled={sending}
+              />
             </div>
-            <select name="service" className={inputClass + " mb-4 appearance-none"} disabled={sending}>
+            <select
+              name="service"
+              aria-label="Qual serviço você precisa?"
+              className={inputClass + " mb-4 appearance-none"}
+              disabled={sending}
+            >
               <option value="">Qual serviço você precisa?</option>
               <option>Desenvolvimento de Site</option>
               <option>Landing Page</option>
@@ -268,13 +271,20 @@ const ContactSection = () => {
                 name="message"
                 rows={4}
                 placeholder="Sua mensagem"
+                aria-label="Sua mensagem"
+                aria-invalid={Boolean(errors.message)}
+                aria-describedby={errors.message ? "contact-error-message" : undefined}
                 className={inputClass}
                 maxLength={1000}
                 onBlur={handleBlur}
                 onChange={handleChange}
                 disabled={sending}
               />
-              {errors.message && <p className="text-destructive text-xs mt-1">{errors.message}</p>}
+              {errors.message && (
+                <p id="contact-error-message" className="text-destructive text-xs mt-1">
+                  {errors.message}
+                </p>
+              )}
             </div>
             <button
               type="submit"
