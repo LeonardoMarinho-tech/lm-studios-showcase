@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink } from "lucide-react";
-import hubbleScreenshot from "@/assets/hubble-screenshot.png";
+import { projects } from "@/lib/projects";
 
 const PortfolioSection = () => {
   const ref = useRef(null);
@@ -18,36 +18,73 @@ const PortfolioSection = () => {
         >
           <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-4">Portfólio</p>
           <h2 className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl mb-4">
-            Projeto <span className="gradient-text">Em Destaque</span>
+            Projetos <span className="gradient-text">Em Destaque</span>
           </h2>
           <div className="gradient-line mx-auto max-w-24" />
         </motion.div>
 
-        <motion.div
-          className="max-w-3xl mx-auto glow-card bg-card rounded-xl overflow-hidden border border-border group"
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.15 }}
-        >
-          <div className="h-56 md:h-72 overflow-hidden">
-            <img src={hubbleScreenshot} alt="Hubble Soluções - Website" className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
-          </div>
-          <div className="p-8">
-            <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Soluções Digitais</span>
-            <h3 className="font-heading font-semibold text-xl mt-2 mb-3 text-foreground">Hubble Soluções</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-              Website profissional desenvolvido para a Hubble Soluções, com design moderno, responsivo e focado em conversão — transmitindo credibilidade e autoridade digital.
-            </p>
-            <a
-              href="https://hubblesolucoes.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-medium gradient-bg text-primary-foreground px-6 py-3 rounded-lg hover:opacity-90 transition-opacity text-sm"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              className="glow-card bg-card rounded-xl overflow-hidden border border-border group flex flex-col"
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.15 + index * 0.1 }}
             >
-              Ver Projeto <ExternalLink size={16} />
-            </a>
-          </div>
-        </motion.div>
+              <div
+                className={
+                  project.imageFit === "cover"
+                    ? "h-48 md:h-56 overflow-hidden"
+                    : "h-48 md:h-56 overflow-hidden bg-white flex items-center justify-center p-6"
+                }
+              >
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className={
+                    project.imageFit === "cover"
+                      ? "w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      : "w-full h-full object-contain"
+                  }
+                />
+              </div>
+              <div className="p-6 md:p-8 flex flex-col flex-1">
+                <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                  {project.tag}
+                </span>
+                <h3 className="font-heading font-semibold text-xl mt-2 mb-3 text-foreground">{project.name}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">{project.description}</p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-xs font-medium px-3 py-1 rounded-full border border-border bg-secondary text-secondary-foreground"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {project.link ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 font-medium gradient-bg text-primary-foreground px-6 py-3 rounded-lg hover:opacity-90 transition-opacity text-sm mt-auto"
+                  >
+                    {project.linkLabel ?? "Ver Projeto"} <ExternalLink size={16} />
+                  </a>
+                ) : (
+                  <span className="text-xs text-muted-foreground italic mt-auto">
+                    Projeto sob demanda · detalhes no contato
+                  </span>
+                )}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
