@@ -41,7 +41,7 @@ const PortfolioSection = () => {
               >
                 <img
                   src={project.image}
-                  alt={project.name}
+                  alt={project.imageAlt}
                   className={
                     project.imageFit === "cover"
                       ? "w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
