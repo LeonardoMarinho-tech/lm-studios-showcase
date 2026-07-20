@@ -2,6 +2,19 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MessagesSquare, FileText, Code2, Rocket } from "lucide-react";
 
+const technologies = [
+  "React",
+  "TypeScript",
+  "Node.js",
+  "Python",
+  "Supabase",
+  "PostgreSQL",
+  "Tailwind CSS",
+  "Vite",
+  "Qt",
+  "FFmpeg",
+];
+
 const steps = [
   {
     icon: MessagesSquare,
@@ -65,6 +78,27 @@ const ProcessSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          className="mt-20 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-6">
+            Tecnologias Que Dominamos
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+            {technologies.map((tech) => (
+              <span
+                key={tech}
+                className="border border-border bg-secondary/50 rounded-full px-4 py-2 text-sm text-muted-foreground"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
