@@ -4,19 +4,14 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Ricardo Oliveira",
-    role: "CEO — Tech Solutions",
-    text: "A LM Studios transformou completamente nossa presença digital. O site ficou incrível e nossos leads aumentaram em 300% no primeiro mês.",
+    name: "Erick",
+    role: "Fundador — Hubble Soluções",
+    text: "Depois do novo site, a Hubble ganhou muito mais presença online. Os clientes chegam até nós com mais facilidade e o negócio passou a transmitir outra credibilidade.",
   },
   {
-    name: "Camila Santos",
-    role: "Diretora de Marketing — Bella Moda",
-    text: "Profissionalismo do início ao fim. O design é moderno, rápido e nossos clientes elogiam constantemente a experiência no site.",
-  },
-  {
-    name: "André Costa",
-    role: "Fundador — Costa Advocacia",
-    text: "Investir no site foi a melhor decisão para o escritório. A equipe da LM Studios entendeu exatamente o que precisávamos.",
+    name: "João",
+    role: "Corretor de Imóveis",
+    text: "O Studio Imobiliário me poupou horas de edição de fotos e vídeos. Meu Instagram e meus anúncios ficaram mais bonitos, padronizados — e com muito mais resultado.",
   },
 ];
 
@@ -40,7 +35,7 @@ const TestimonialsSection = () => {
           <div className="gradient-line mx-auto max-w-24" />
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
