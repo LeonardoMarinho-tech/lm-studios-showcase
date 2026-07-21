@@ -1,6 +1,6 @@
 import hubbleScreenshot from "@/assets/hubble-screenshot.jpg";
-import hubImobHero from "@/assets/hub-imob-hero.png";
-import studioImobiliarioLogo from "@/assets/studio-imobiliario-logo.png";
+import hubImobScreenshot from "@/assets/hub-imob-screenshot.jpg";
+import studioImobiliarioPromo from "@/assets/studio-imobiliario-promo.jpg";
 
 export interface Project {
   id: string;
@@ -36,9 +36,9 @@ export const projects: Project[] = [
     description:
       "Sistema web que reúne o financeiro de uma imobiliária em uma visão executiva única: receita, despesa e resultado do mês em uma tela. Importação inteligente com integração ao ERP de locação, controle de despesas e contas recorrentes, permissões corporativas granulares e auditoria completa de alterações — com arquitetura testada para meio milhão de lançamentos.",
     stack: ["React", "Supabase", "PostgreSQL"],
-    image: hubImobHero,
-    imageAlt: "Ilustração da identidade visual do Hub Imob",
-    imageFit: "contain",
+    image: hubImobScreenshot,
+    imageAlt: "Tela Visão Executiva do Hub Imob, com indicadores financeiros e dados ilustrativos",
+    imageFit: "cover",
   },
   {
     id: "studio-imobiliario",
@@ -47,8 +47,8 @@ export const projects: Project[] = [
     description:
       "Aplicativo desktop que automatiza a criação de material de divulgação imobiliária. A partir dos dados e fotos de um imóvel, gera automaticamente artes para Feed e Stories e vídeos com narração e música, com preview WYSIWYG e identidade visual aplicada — entregue como instalador Windows pronto para uso.",
     stack: ["Python", "Qt", "FFmpeg"],
-    image: studioImobiliarioLogo,
-    imageAlt: "Logotipo do Studio Imobiliário",
-    imageFit: "contain",
+    image: studioImobiliarioPromo,
+    imageAlt: "Arte promocional do Studio Imobiliário mostrando a tela de geração de material",
+    imageFit: "cover",
   },
 ];
