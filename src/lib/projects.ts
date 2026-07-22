@@ -50,5 +50,7 @@ export const projects: Project[] = [
     image: studioImobiliarioPromo,
     imageAlt: "Arte promocional do Studio Imobiliário mostrando a tela de geração de material",
     imageFit: "cover",
+    link: "https://studioimobiliario.netlify.app",
+    linkLabel: "Conhecer o Studio",
   },
 ];
